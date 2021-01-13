@@ -55,7 +55,7 @@
     <repository>
       <id>github</id>
       <name>GitHub AIT-Lablink Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/ait-lablink/lablink-sync-client</url>
+      <url>https://maven.pkg.github.com/ait-lablink/lablink-sync-host</url>
     </repository>
 
   </distributionManagement>
