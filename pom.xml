@@ -154,7 +154,8 @@
               <goal>single</goal>
             </goals>
             <configuration>
-              <attach>false</attach><!-- don't attach the generated assembly to the project deploy -->
+              <!-- don't attach the generated assembly to the project deploy -->
+              <!-- <attach>false</attach> -->
               <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>
               </descriptorRefs>
