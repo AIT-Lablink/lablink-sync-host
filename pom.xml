@@ -6,7 +6,7 @@
   <groupId>at.ac.ait.lablink.clients</groupId>
   <artifactId>sync</artifactId>
   <version>0.0.1</version>
-  <name>lablink-sync-host</name>
+  <name>Lablink synchronization host implementation</name>
   <description>This package contains synchronization host service implementations for the AIT Lablink</description>
   <url>https://github.com/ait-lablink/lablink-sync-host</url>
 
