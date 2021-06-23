@@ -7,15 +7,36 @@
   <artifactId>sync</artifactId>
   <version>0.0.1</version>
   <name>lablink-sync-host</name>
-
+  <description>This package contains synchronization host service implementations for the AIT Lablink</description>
   <url>https://github.com/ait-lablink/lablink-sync-host</url>
 
-  <organization>
+  <licenses>
+    <license>
+      <name>Lablink license</name>
+      <url>https://ait-lablink.readthedocs.io/en/latest/availability.html#lablink-license</url>
+    </license>
+  </licenses>
 
-    <name>AIT Austrian Institute of Technology</name>
-    <url>https://www.ait.ac.at</url>
+  <developers>
+    <developer>
+      <name>Jawad Kazmi</name>
+      <email>jawad.kazmi@ait.ac.at</email>
+      <organization>AIT Austrian Institute of Technology</organization>
+      <organizationUrl>https://www.ait.ac.at</organizationUrl>
+    </developer>
+    <developer>
+      <name>Edmund Widl</name>
+      <email>edmund.widl@ait.ac.at</email>
+      <organization>AIT Austrian Institute of Technology</organization>
+      <organizationUrl>https://www.ait.ac.at</organizationUrl>
+    </developer>
+  </developers>
 
-  </organization>
+  <scm>
+    <connection>scm:git:https://github.com/AIT-Lablink/lablink-sync-host.git</connection>
+    <developerConnection>scm:git:https://github.com/AIT-Lablink/lablink-sync-host.git</developerConnection>
+    <url>http://github.com/AIT-Lablink/lablink-sync-host/tree/main</url>
+  </scm>
 
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -25,59 +46,57 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
-  <repositories>
-
-    <repository>
-      <id>github</id>
-      <name>GitHub AIT-Lablink Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/ait-lablink/lablink-core-java</url>
-    </repository>
-
-    <repository>
-      <id>central</id>
-      <name>Maven Repository Switchboard</name>
-      <layout>default</layout>
-      <url>https://repo1.maven.org/maven2</url>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-
-  </repositories>
-
   <distributionManagement>
-
-    <repository>
-      <id>github</id>
-      <name>GitHub AIT-Lablink Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/ait-lablink/lablink-sync-host</url>
-    </repository>
-
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
-
 
   <build>
 
-    <resources>
-      <resource>
-        <directory>src/main/resources</directory>
-        <filtering>true</filtering>
-      </resource>
-    </resources>
-
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-        <filtering>true</filtering>
-      </testResource>
-    </testResources>
-
     <plugins>
+
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.7</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>false</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
