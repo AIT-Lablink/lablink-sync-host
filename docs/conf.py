@@ -24,7 +24,7 @@ copyright = 'AIT Austrian Institute of Technology GmbH'
 author = 'AIT Lablink Development Team'
 
 # The short X.Y version
-version = '0.0.1'
+version = '0.0.2'
 # The full version, including alpha/beta/rc tags
 release = ''
 
@@ -39,6 +39,7 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.extlinks',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -174,3 +175,9 @@ epub_title = project
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
+
+# External link library
+extlinks = {
+    'github_blob': ('https://github.com/AIT-Lablink/lablink-sync-host/blob/main/%s', ''),
+    'github_tree': ('https://github.com/AIT-Lablink/lablink-sync-host/tree/main/%s', ''),
+}
