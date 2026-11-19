@@ -39,6 +39,11 @@ On Windows, run ``mvnw.cmd`` instead of ``mvnw``.
 This will create the JAR file *sync-<VERSION>-jar-with-dependencies.jar* in subdirectory *target/assembly*.
 The main class of that JAR is ``at.ac.ait.lablink.clients.sync.SimpleSyncHost``.
 
+Publishing to the Maven Central Repository
+------------------------------------------
+
+A release is published with ``mvnw deploy``. The build signs the artifacts and uploads them to the `Central Portal <https://central.sonatype.com/>`_. The upload uses a Central Portal user token from your Maven ``settings.xml`` and a local GPG key. Publishing is manual: the deployment stays pending until you publish it in the portal, and the build waits until that happens.
+
 Docker image
 ------------
 
