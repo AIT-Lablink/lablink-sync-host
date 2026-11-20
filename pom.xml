@@ -112,7 +112,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.3</version>
+        <version>3.12.0</version>
         <configuration>
           <show>private</show>
           <docfilessubdirs>true</docfilessubdirs>
@@ -163,7 +163,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.8.0</version>
         <executions>
           <execution>
             <!-- generate assembly containing all dependencies -->
